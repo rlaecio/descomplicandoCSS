@@ -38,29 +38,25 @@ header .container {
   position: relative;
 }
 
-.menu-opcoes {
+.menu-principal {
   position: absolute;
   right: 0;
   top: -0.5em;
   font-size: 1.2em;
   font-weight: lighter;
 }
-
-.menu-opcoes ul {
+.menu-principal ul {
   padding-left: 0;
 }
-
-.menu-opcoes li {
+.menu-principal li {
   display: inline-block;
   width: 5em;
 }
-
-.menu-opcoes a {
+.menu-principal a {
   color: white;
   text-decoration: none;
 }
-
-.menu-opcoes a:hover {
+.menu-principal a:hover {
   text-decoration: underline;
 }
 
@@ -73,22 +69,18 @@ header .container {
   height: 330px;
   padding-top: 10em;
 }
-
 .destaque p {
   width: 30em;
 }
-
-.destaque p:first-child {
+.destaque:first-child {
   width: 30em;
   font-size: 1.3em;
   line-height: 1.1;
 }
-
-.destaque p:first-child:first-line {
+.destaque:first-child:first-line {
   font-size: 2.2em;
   font-weight: bold;
 }
-
 .destaque button {
   margin-top: 1em;
   background: #c24e4b;
@@ -101,8 +93,7 @@ header .container {
   font-weight: bold;
 }
 
-/** Sobre **/
-.sobre {
+.destaque .sobre {
   background: #ebebeb;
 }
 
@@ -125,6 +116,7 @@ header .container {
   margin-bottom: 3em;
 }
 
+/** plataformas **/
 .plataformas {
   padding: 0;
 }
@@ -141,19 +133,19 @@ header .container {
 }
 
 .plataformas li:nth-child(1) {
-  background-image: url(../imagens/logo-apple.png);
+  background-image: url("../imagens/logo-apple.png");
 }
 
 .plataformas li:nth-child(2) {
-  background-image: url(../imagens/logo-android.png);
+  background-image: url("../imagens/logo-android.png");
 }
 
 .plataformas li:nth-child(3) {
-  background-image: url(../imagens/logo-windows.png);
+  background-image: url("../imagens/logo-windows.png");
 }
 
 .plataformas li:nth-child(4) {
-  background-image: url(../imagens/logo-blackberry.png);
+  background-image: url("../imagens/logo-blackberry.png");
 }
 
 /** Planos **/
@@ -162,7 +154,7 @@ header .container {
 }
 
 .planos h2 {
-  color: #FFF;
+  color: #fff;
 }
 
 .plano {
@@ -178,7 +170,7 @@ header .container {
 }
 
 .plano h3 {
-  color: #FFF;
+  color: #fff;
   font-size: 1.8em;
   background: #c24e4b;
   text-align: center;
@@ -216,7 +208,7 @@ header .container {
 .plano button {
   background: #c24e4b;
   border: 0;
-  color: #FFF;
+  color: #fff;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
@@ -226,7 +218,8 @@ header .container {
   margin-left: 2em;
 }
 
-.icone-check, .icone-x {
+.icone-check,
+.icone-x {
   background: url(../imagens/sprite.png) no-repeat;
   width: 18px;
   height: 18px;
@@ -312,7 +305,7 @@ textarea {
   margin: 0 auto;
   background: #c24e4b;
   border: 0;
-  color: #FFF;
+  color: #fff;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
@@ -386,7 +379,7 @@ footer .container img {
 }
 
 footer a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -410,15 +403,15 @@ footer a {
 }
 
 .social a[href*=facebook] {
-  background-image: url(../imagens/facebook.png);
+  background-image: url("../imagens/facebook.png");
 }
 
 .social a[href*=twitter] {
-  background-image: url(../imagens/twitter.png);
+  background-image: url("../imagens/twitter.png");
 }
 
 .social a[href*=instagram] {
-  background-image: url(../imagens/instagram.png);
+  background-image: url("../imagens/instagram.png");
 }
 
 /*# sourceMappingURL=estilos.css.map */

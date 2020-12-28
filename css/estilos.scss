@@ -1,10 +1,9 @@
-// variaveis do sistema 
+// variaveis do sistema
 $cor-padrao: #c24e4b;
-$cor-branca: #FFF;
+$cor-branca: #fff;
 $cor-secundaria: #1e2c35;
 
-
-// Mixin (funcoes) do css 
+// Mixin (funcoes) do css
 @mixin borda-arredondada($raio: 0.3em) {
   -webkit-border-radius: $raio;
   border-radius: $raio;
@@ -12,6 +11,16 @@ $cor-secundaria: #1e2c35;
 
 @mixin sombra-padrao {
   box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+@mixin imagem-fundo-url($url-imagem) {
+  background-image: url($url-imagem);
 }
 
 /** Geral **/
@@ -54,31 +63,36 @@ header .container {
   position: relative;
 }
 
-.menu-opcoes {
+.menu-principal {
   position: absolute;
   right: 0;
-  top: -.5em;
+  top: -0.5em;
   font-size: 1.2em;
   font-weight: lighter;
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
+    width: 5em;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  
+
 }
 
-.menu-opcoes ul {
-  padding-left: 0;
-}
 
-.menu-opcoes li {
-  display: inline-block;
-  width: 5em;
-}
-
-.menu-opcoes a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu-opcoes a:hover {
-  text-decoration: underline;
-}
 
 /** Destaque **/
 .destaque {
@@ -88,33 +102,39 @@ header .container {
   color: white;
   height: 330px;
   padding-top: 10em;
+
+  p {
+    width: 30em;
+  }
+
+  &:first-child {
+    width: 30em;
+    font-size: 1.3em;
+    line-height: 1.1;
+
+
+    &:first-line {
+      font-size: 2.2em;
+      font-weight: bold;
+    }
+    
+  }
+
+  button {
+    margin-top: 1em;
+    background: $cor-padrao;
+    border: 0;
+    padding: 0.6em;
+    font-size: 1.2em;
+    @include borda-arredondada(50px);
+    @include sombra-padrao;
+    font-weight: bold;
+  }
+
 }
 
-.destaque p {
-  width: 30em;
-}
 
-.destaque p:first-child {
-  width: 30em;
-  font-size: 1.3em;
-  line-height: 1.1;
-}
-
-.destaque p:first-child:first-line {
-  font-size: 2.2em;
-  font-weight: bold;
-}
-
-.destaque button {
-  margin-top: 1em;
-  background: $cor-padrao;
-  border: 0;
-  padding: .6em;
-  font-size: 1.2em;
-  @include borda-arredondada(50px);
-  @include sombra-padrao;
-  font-weight: bold;
-}
+.destaque 
 
 
 /** Sobre **/
@@ -134,13 +154,15 @@ header .container {
 }
 
 .sobre p {
-  font: .9em/1.8 sans-serif;
+  font: 0.9em/1.8 sans-serif;
 }
 
 .sobre p:first-child {
   margin-bottom: 3em;
 }
 
+
+/** plataformas **/
 .plataformas {
   padding: 0;
 }
@@ -149,27 +171,25 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   background-position: center;
   margin: 1em 1.5em 0 0;
 }
 
 .plataformas li:nth-child(1) {
-  background-image: url(../imagens/logo-apple.png);
+  @include imagem-fundo-url("../imagens/logo-apple.png");
 }
 
 .plataformas li:nth-child(2) {
-  background-image: url(../imagens/logo-android.png);
+  @include imagem-fundo-url("../imagens/logo-android.png");
 }
 
 .plataformas li:nth-child(3) {
-  background-image: url(../imagens/logo-windows.png);
+  @include imagem-fundo-url("../imagens/logo-windows.png");
 }
 
 .plataformas li:nth-child(4) {
-  background-image: url(../imagens/logo-blackberry.png);
+  @include imagem-fundo-url("../imagens/logo-blackberry.png");
 }
 
 /** Planos **/
@@ -178,7 +198,7 @@ header .container {
 }
 
 .planos h2 {
-  color:$cor-branca;
+  color: $cor-branca;
 }
 
 .plano {
@@ -194,12 +214,12 @@ header .container {
 }
 
 .plano h3 {
-  color:$cor-branca;
+  color: $cor-branca;
   font-size: 1.8em;
   background: $cor-padrao;
   text-align: center;
   height: 2em;
-  padding-top: .6em;
+  padding-top: 0.6em;
   margin-top: 0;
 }
 
@@ -217,7 +237,7 @@ header .container {
   font-size: 1em;
   list-style: none;
   border-bottom: 1px solid #acacac;
-  padding: .5em;
+  padding: 0.5em;
   width: 14.8em;
 }
 
@@ -232,7 +252,7 @@ header .container {
 .plano button {
   background: $cor-padrao;
   border: 0;
-  color:$cor-branca;
+  color: $cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
@@ -241,7 +261,8 @@ header .container {
   margin-left: 2em;
 }
 
-.icone-check, .icone-x {
+.icone-check,
+.icone-x {
   background: url(../imagens/sprite.png) no-repeat;
   width: 18px;
   height: 18px;
@@ -255,8 +276,6 @@ header .container {
   background-position: -33px -5px;
 }
 
-
-
 /** Blog **/
 .blog {
   display: block;
@@ -267,7 +286,7 @@ header .container {
   content: "";
   background: url(../imagens/fundo.png);
   background-size: 25px 25px;
-  opacity: .15;
+  opacity: 0.15;
   top: 0;
   left: 0;
   bottom: 0;
@@ -318,7 +337,7 @@ form {
 .contato input,
 textarea {
   width: 100%;
-  margin-bottom: .8em;
+  margin-bottom: 0.8em;
   padding: 4px 8px;
   @include borda-arredondada;
   border: 2px solid #ccc;
@@ -328,7 +347,7 @@ textarea {
   margin: 0 auto;
   background: $cor-padrao;
   border: 0;
-  color:$cor-branca;
+  color: $cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
@@ -345,7 +364,7 @@ footer {
 footer::after {
   content: "";
   background: url(../imagens/fundo-rodape.png);
-  opacity: .02;
+  opacity: 0.02;
   top: 0;
   left: 0;
   bottom: 0;
@@ -401,7 +420,7 @@ footer .container img {
 }
 
 footer a {
-  color:$cor-branca;
+  color: $cor-branca;
   text-decoration: none;
 }
 
@@ -413,9 +432,7 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   margin-left: 1em;
 }
 
@@ -425,13 +442,13 @@ footer a {
 }
 
 .social a[href*="facebook"] {
-  background-image: url(../imagens/facebook.png);
+  @include imagem-fundo-url("../imagens/facebook.png");
 }
 
 .social a[href*="twitter"] {
-  background-image: url(../imagens/twitter.png);
+  @include imagem-fundo-url("../imagens/twitter.png");
 }
 
 .social a[href*="instagram"] {
-  background-image: url(../imagens/instagram.png);
+  @include imagem-fundo-url("../imagens/instagram.png");
 }
